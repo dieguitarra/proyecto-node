@@ -2,23 +2,31 @@
   <div class="row">
     <form
       class="container col-5 bg-success bg-opacity-50 border border-dark py-4 px-4 col-10 col-md-6 col-lg-6 rounded mb-5 mt-5"
-      action="/users/login"
+      action="/contacto"
       method="POST"
     >
-      <h2 class="text-dark text-center">Login</h2>
-      <div class="mb-3">
-        <label for="user" class="form-label">Nickname</label>
+      <h2 class="text-dark text-center">Contacto</h2>
+            <div class="mb-3">
+        <label for="name" class="form-label">Nombre</label>
         <input
-          name="nickname"
+          name="name"
           type="text"
-          class="form-control"
-          id="nickname"
+          class="form-control border border-dark"
+          id="name"
           {{! autocomplete="username" }}
-          autofocus
         />
-      </div>
+              <div class="mb-3">
+        <label for="lastName" class="form-label">Apellido</label>
+        <input
+          name="lastName"
+          type="text"
+          class="form-control border border-dark"
+          id="lastName"
+          {{! autocomplete="username" }}
+        />
+
       <div class="mb-3">
-        <label for="user" class="form-label">Email</label>
+        <label for="email" class="form-label">Email</label>
         <input
           name="email"
           type="text"
@@ -26,26 +34,16 @@
           id="email"
           {{! autocomplete="username" }}
         />
-      </div>
-      <div class="mb-3">
-        <label for="pass" class="form-label">Password</label>
-        <input
-          name="pass"
-          type="password"
-          class="form-control border border-dark"
-          id="pass"
-          {{! autocomplete="current-password" }}
-        />
-      </div>
+
 
       <div class="input-group mb-3">
-        <img src="imagenes/iconos/text.png" width="45" height="45" />
+        {{!-- <img src="/imagenes/iconos/text.png" width="45" height="45" /> --}}
         <textarea
           class="form-control"
           aria-label="With textarea"
           style="height: 200px"
           name="message"
-        >{{contacto.message}}</textarea>
+        >{{formData.message}}</textarea>
       </div>
 
       {{#if message}}
@@ -73,10 +71,9 @@
         <input
           type="submit"
           class="btn btn-success border border-dark"
-          value="Tengo una cuenta"
+          value="Enviar"
         />
-        <a href="/users/register" class="btn btn-danger border border-dark">No
-          tengo una cuenta</a>
+
       </div>
     </form>
   </div>

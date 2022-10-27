@@ -16,11 +16,21 @@
         <li class="nav-item mx-5">
           <a class="nav-link" href="/">Home</a>
         </li>
+        <li class="nav-item mx-5">
+
+          <a class="nav-link" href="/contacto">Contacto</a>
+        </li>
         {{#if user}}
           <li class="nav-item mx-5">
-            <p>{{user}}</p>
-            <a class="nav-link" href="/users/logout">Logout</a>
+            <a class="nav-link">
+              <i class="bi bi-person-fill mx-2"></i>{{user.name}}
+              {{user.lastName}}{{user}}</a>
           </li>
+          <li class="nav-item mx-5">
+
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+
           <li class="nav-item mx-5">
             <a class="nav-link" href="/secret">Secret</a>
           </li>
@@ -37,19 +47,17 @@
               Config
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li class="mx-5"><a
-                  class="dropdown-item"
-                  href="/users/settings"
-                >Account Settings</a></li>
-              <li><a class="dropdown-item" href="/users/validate">Validate Email</a></li>
+              <li class="mx-5"><a class="dropdown-item" href="/settings">Account
+                  Settings</a></li>
+              <li><a class="dropdown-item" href="/validate">Validate Email</a></li>
             </ul>
           </li>
         {{else}}
           <li class="nav-item mx-5">
-            <a class="nav-link" href="/users/login">Login</a>
+            <a class="nav-link" href="/login">Login</a>
           </li>
           <li class="nav-item mx-5">
-            <a class="nav-link" href="/users/register">Register</a>
+            <a class="nav-link" href="/register">Register</a>
           </li>
         {{/if}}
       </ul>

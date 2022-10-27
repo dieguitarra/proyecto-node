@@ -1,10 +1,10 @@
 <div class="container mt-5 text-dark bgImg mb-5">
   <div class="row">
-    <form class="container col-5 bg-success  bg-opacity-50 border border-dark py-4 px-4 col-10 col-md-6 col-lg-6 rounded mb-5 mt-5" action="/users/register" method="POST">
+    <form class="container col-5 bg-success  bg-opacity-50 border border-dark py-4 px-4 col-10 col-md-6 col-lg-6 rounded mb-5 mt-5" action="/register" method="POST">
               <div class="mb-3">
                 <h2 class="text-dark text-center">Registro</h2>
-         <label for="user" class="form-label">Nickname</label>
-        <input name="nickname" type="text" class="form-control" id="nickname"  autofocus> 
+         {{!-- <label for="user" class="form-label">Nickname</label>
+        <input name="nickname" type="text" class="form-control" id="nickname"  autofocus>  --}}
         {{!-- autocomplete="username" --}}
       </div>
       <div class="mb-3">
@@ -26,12 +26,12 @@
         <label for="pass" class="form-label">Password</label>
         <input name="pass" type="password" class="form-control border border-dark" id="pass" >
         {{!-- autocomplete="current-password" --}}
-      {{!-- </div>
-            <div class="mb-3">
+      </div>
+            {{!-- <div class="mb-3">
         <label for="pass" class="form-label">Teléfono</label>
         <input name="pass" type="text" class="form-control border border-dark" id="phone"         autocomplete="current-password" >
 
-      </div> --}}
+      </div>  --}}
       {{#if message}}
       <div class="alert alert-danger d-flex align-items-center" role="alert">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
@@ -47,7 +47,7 @@
       {{/if}}
       <div class="d-flex justify-content-between">
         <input type="submit" class="btn btn-success border border-dark " value="Registrar mi cuenta" />
-        <a href="/users/login" class="btn btn-danger border border-dark">Volver al inicio</a>
+        <a href="/login" class="btn btn-danger border border-dark">Volver al inicio</a>
       </div>
   </div>
   </form>

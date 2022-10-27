@@ -3,7 +3,7 @@ const path = require("path");
 const { log } = require("console");
 const express = require("express");
 const hbs = require("express-handlebars");
-const routes = require("./routes/usersRt");
+const usersRt = require("./routes/usersRt");
 const session = require("express-session");
 
 const auth = require("./helpers/auth");
@@ -42,7 +42,7 @@ app.get("/secret", auth, (req, res) => {
 });
 
 //Rutas
-app.use("/", routes);
+app.use("/", usersRt);
 app.get("/noauth", (req, res) => {
   res.render("noAuth");
 });

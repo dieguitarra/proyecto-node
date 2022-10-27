@@ -28,7 +28,7 @@ const validationRules = [
       const formData = req.body;
       const arrWarnings = errors.array();
 
-      res.render("registerForm", { arrWarnings, formData });
+      res.render("contacto", { arrWarnings, formData });
     } else return next();
   },
 ];

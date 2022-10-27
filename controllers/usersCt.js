@@ -2,13 +2,16 @@ const nodemailer = require("nodemailer");
 const securePass = require("../helpers/securePass");
 const User = require("../schemas/userSchema");
 const transport = require("../config/mongo");
+require("dotenv").config();
+
+/*MOSTRAMOS EL FORMULARIO DE CONTACTO*/
 
 //mostrar form de login
-async function getLoginForm(req, res, next) {
-  res.render("loginForm");
+async function getContactForm(req, res, next) {
+  res.render("contacto", { user: req.session.user });
 }
 //Enviamos el mail del formulario de contacto
-async function validateEmail(req, res) {
+async function postContactForm(req, res) {
   const { name, lastName, email, message } = req.body;
   const emailMsg = {
     to: "atencioncliente@nuestraempresa.com",
@@ -24,6 +27,9 @@ async function validateEmail(req, res) {
     req.app.locals.sendMailFeedback = "Mensaje enviado";
   }
   res.redirect("/");
+}
+async function getLoginForm(req, res, next) {
+  res.render("loginForm", { user: req.session.user });
 }
 //procesar form de login
 async function sendLoginForm(req, res, next) {
@@ -55,10 +61,11 @@ async function sendLoginForm(req, res, next) {
 function getRegisterForm(req, res, next) {
   res.render("registerForm");
 }
-//Procesamos el form de register ->Crear nuevo usuario
+//procesamos el  form de register -> Crear nuevo usuario
 async function sendRegisterForm(req, res, next) {
   const { name, lastName, email, pass } = req.body;
   const password = await securePass.encrypt(pass);
+
   const newUser = new User({
     name,
     lastName,
@@ -74,12 +81,12 @@ async function sendRegisterForm(req, res, next) {
     if (!err) {
       req.session.user = usr;
       res.render("secret", {
-        user: `${req.session.user.name}${req.session.user.lastName}`,
+        user: `${req.session.user.name} ${req.session.user.lastName}`,
         id: req.session.user.id,
       });
     } else {
       res.render("registerForm", {
-        message: "Ya existe un registro con ese email",
+        message: "Ya existe un registro  con ese email",
       });
     }
   });
@@ -123,6 +130,7 @@ function logout(req, res) {
   res.redirect("/");
 }
 module.exports = {
+  getContactForm,
   getLoginForm,
   sendLoginForm,
   getRegisterForm,
@@ -130,6 +138,7 @@ module.exports = {
   getSettings,
   sendSettings,
   deleteUser,
-  validateEmail,
+  postContactForm,
   logout,
+  validateEmail,
 };

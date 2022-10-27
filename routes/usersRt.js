@@ -7,9 +7,13 @@ const { validationRules } = require("../helpers/validationRules");
 
 router.get("/login", users.getLoginForm);
 router.post("/login", users.sendLoginForm);
-//router.get("/register", users.getRegisterForm);
-router.post("/register", validationRules, users.validateEmail);
+
+router.get("/register", users.getRegisterForm);
 router.post("/register", users.sendRegisterForm);
+
+router.get("/contacto", users.getContactForm);
+router.post("/contacto", validationRules, users.postContactForm);
+
 router.get("/logout", users.logout);
 router.get("/settings", auth, users.getSettings);
 router.post("/settings", auth, users.sendSettings);
