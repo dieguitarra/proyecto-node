@@ -3,11 +3,11 @@ const path = require("path");
 const { log } = require("console");
 const express = require("express");
 const hbs = require("express-handlebars");
-const usersRt = require("./routes/usersRt");
+const usersRoute = require("./routes/usersRoute");
 const session = require("express-session");
 const { create } = require("handlebars");
 
-const auth = require("./helpers/auth");
+const authorization = require("./helpers/authorization");
 
 //Aplicación express
 const app = express();
@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
   res.render("home", { user: req.session.user });
 });
 
-app.get("/secret", auth, (req, res) => {
+app.get("/secret", authorization, (req, res) => {
   res.render("secret", {
     user: `${req.session.user.name} ${req.session.user.lastName}`,
     id: req.session.user.id,
@@ -43,9 +43,9 @@ app.get("/secret", auth, (req, res) => {
 });
 const handle = create({ helpers: require("./helpers/filtro") });
 //Rutas
-app.use("/", usersRt);
-app.get("/noauth", (req, res) => {
-  res.render("noAuth");
+app.use("/", usersRoute);
+app.get("/noauthorization", (req, res) => {
+  res.render("noAuthorization");
 });
 
 //Puerto de escucha del servidor

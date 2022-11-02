@@ -69,16 +69,23 @@
           </div>
         </div>
       {{/if}}
-      <div class="d-flex justify-content-between">
-        <input type="submit" class="btn btn-success" value="Confirma cambios" />
-        <button
-          type="button"
-          class="btn btn-danger"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-        >Borrar cuenta</button>
-        <a href="/" class="btn btn-warning">Cancelar cambios</a>
+      <div class="container">
+        <div class="row px-5 pb-2 pt-3">
+          <input
+            type="submit"
+            class="btn btn-success my-1"
+            value="Confirma cambios"
+          />
+          <button
+            type="button"
+            class="btn btn-danger my-1"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >Borrar cuenta</button>
+          <a href="/" class="btn btn-warning my-1">Cancelar cambios</a>
+        </div>
       </div>
+
     </form>
     {{! delete account confirmation modal }}
     <div
@@ -94,7 +101,7 @@
             <h5 class="modal-title" id="exampleModalLabel">Por favor confirmá</h5>
             <button
               type="button"
-              class="btn-close btn-lg"
+              class="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
@@ -107,14 +114,10 @@
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-success btn-lg"
+              class="btn btn-success"
               data-bs-dismiss="modal"
             >Cancelar</button>
-            <a
-              href="/delete"
-              type="button"
-              class="btn btn-danger btn-lg"
-            >Borrar</a>
+            <a href="/delete" type="button" class="btn btn-danger">Borrar</a>
           </div>
         </div>
       </div>

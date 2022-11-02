@@ -1,7 +1,7 @@
 const express = require("express");
 const router = require("express").Router();
-const users = require("../controllers/usersCt");
-const auth = require("../helpers/auth");
+const users = require("../controllers/usersController");
+const authorization = require("../helpers/authorization");
 
 const validationRules = require("../helpers/validationRules");
 
@@ -15,8 +15,8 @@ router.get("/contacto", users.getContactForm);
 router.post("/contacto", validationRules, users.postContactForm);
 
 router.get("/logout", users.logout);
-router.get("/settings", auth, users.getSettings);
-router.post("/settings", auth, users.sendSettings);
-router.get("/validate", auth, users.validateEmail);
-router.get("/delete", auth, users.deleteUser);
+router.get("/settings", authorization, users.getSettings);
+router.post("/settings", authorization, users.sendSettings);
+router.get("/validate", authorization, users.validateEmail);
+router.get("/delete", authorization, users.deleteUser);
 module.exports = router;
