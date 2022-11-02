@@ -1,13 +1,13 @@
 const nodemailer = require("nodemailer");
 const securePass = require("../helpers/securePass");
 const User = require("../schemas/userSchema");
-const transport = require("../config/mongo");
+const transport = require("../config/nodemailer");
 require("dotenv").config();
 
 /*MOSTRAMOS EL FORMULARIO DE CONTACTO*/
 
 //mostrar form de login
-async function getContactForm(req, res, next) {
+function getContactForm(req, res) {
   res.render("contacto", { user: req.session.user });
 }
 //Enviamos el mail del formulario de contacto

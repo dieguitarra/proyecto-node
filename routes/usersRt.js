@@ -3,7 +3,7 @@ const router = require("express").Router();
 const users = require("../controllers/usersCt");
 const auth = require("../helpers/auth");
 
-const { validationRules } = require("../helpers/validationRules");
+const validationRules = require("../helpers/validationRules");
 
 router.get("/login", users.getLoginForm);
 router.post("/login", users.sendLoginForm);

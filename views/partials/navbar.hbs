@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm bg-success bg-opacity-25">
+<nav class="navbar navbar-expand-sm bg-success bg-opacity-25 fs-4">
   <div class="container-fluid">
     <button
       class="navbar-toggler"
@@ -18,21 +18,28 @@
         </li>
         <li class="nav-item mx-5">
 
-          <a class="nav-link" href="/contacto">Contacto</a>
+          <a class="nav-link" href="/contacto"><i
+              class="bi bi-envelope-fill mx-2"
+            ></i>
+            Contacto</a>
         </li>
         {{#if user}}
           <li class="nav-item mx-5">
             <a class="nav-link">
-              <i class="bi bi-person-fill mx-2"></i>{{user.name}}
-              {{user.lastName}}{{user}}</a>
+              <i class="bi bi-person-circle mx-2"></i>{{user.name}}
+              {{user.lastName}}</a>
           </li>
           <li class="nav-item mx-5">
 
-            <a class="nav-link" href="/logout">Logout</a>
+            <a class="nav-link" href="/logout"><i
+                class="bi bi-person-x-fill mx-2"
+              ></i>
+              Deslogearse</a>
           </li>
 
           <li class="nav-item mx-5">
-            <a class="nav-link" href="/secret">Secret</a>
+            <a class="nav-link" href="/secret"><i class="bi bi-cart-fill"></i>
+              Compras</a>
           </li>
           <li class="nav-item dropdown mx-5">
             <a
@@ -44,20 +51,30 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Config
+              <i class="bi bi-gear-fill"></i>
+              Configurar
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li class="mx-5"><a class="dropdown-item" href="/settings">Account
-                  Settings</a></li>
-              <li><a class="dropdown-item" href="/validate">Validate Email</a></li>
+              <li class="mx-5"><a
+                  class="dropdown-item mx-2"
+                  href="/settings"
+                >Ajustes de cuenta</a></li>
+              <li><a class="dropdown-item text-center" href="/validate">Validar
+                  email</a></li>
             </ul>
           </li>
         {{else}}
           <li class="nav-item mx-5">
-            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/login"><i
+                class="bi bi-person-circle mx-2"
+              ></i>
+              Logearse</a>
           </li>
           <li class="nav-item mx-5">
-            <a class="nav-link" href="/register">Register</a>
+            <a class="nav-link" href="/register"><i
+                class="bi bi-person-lines-fill mx-2"
+              ></i>
+              Registro</a>
           </li>
         {{/if}}
       </ul>

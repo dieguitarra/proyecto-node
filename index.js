@@ -5,6 +5,7 @@ const express = require("express");
 const hbs = require("express-handlebars");
 const usersRt = require("./routes/usersRt");
 const session = require("express-session");
+const { create } = require("handlebars");
 
 const auth = require("./helpers/auth");
 
@@ -40,7 +41,7 @@ app.get("/secret", auth, (req, res) => {
     id: req.session.user.id,
   });
 });
-
+const handle = create({ helpers: require("./helpers/filtro") });
 //Rutas
 app.use("/", usersRt);
 app.get("/noauth", (req, res) => {

@@ -1,32 +1,22 @@
-<div class="container mt-5">
-  <div class="row justify-content-center">
+<div class="container mt-5 mb-5 py-5">
+  <div class="row justify-content-center my5-">
     <div class="py-4 col-10 col-md-6 col-lg-5">
-      <h1>Account Information</h1>
-      <p>Last modification: {{user.updatedAt}}</p>
+      <h1>Información de la cuenta</h1>
+      <p>Última modificación: {{user.updatedAt}}</p>
       {{#if user.validated}}
-        <p>Account validated</p>
+        <p>Cuenta validada</p>
       {{else}}
-        <p>Account not validated</p>
+        <p>Cuenta no validada</p>
       {{/if}}
     </div>
     <form
-      class="container col-5 bg-dark py-4 px-4 col-10 col-md-6 col-lg-5"
-      action="/users/settings"
+      class="container col-5 bg-success bg-opacity-25 border border-dark rounded py-4 px-4 col-10 col-md-6 col-lg-5 my-5"
+      action="/settings"
       method="POST"
     >
+
       <div class="mb-3">
-        <label for="user" class="form-label">Nickname</label>
-        <input
-          name="nickname"
-          type="text"
-          class="form-control"
-          id="nickname"
-          autocomplete="username"
-          autofocus
-        />
-      </div>
-      <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
+        <label for="name" class="form-label">Nombre</label>
         <input
           name="name"
           type="text"
@@ -37,7 +27,7 @@
         />
       </div>
       <div class="mb-3">
-        <label for="lastName" class="form-label">Lastname</label>
+        <label for="lastName" class="form-label">Apellido</label>
         <input
           name="lastName"
           type="text"
@@ -80,14 +70,14 @@
         </div>
       {{/if}}
       <div class="d-flex justify-content-between">
-        <input type="submit" class="btn btn-success" value="Confirm Changes" />
+        <input type="submit" class="btn btn-success" value="Confirma cambios" />
         <button
           type="button"
           class="btn btn-danger"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
-        >Delete Account</button>
-        <a href="/" class="btn btn-warning">Cancel Changes</a>
+        >Borrar cuenta</button>
+        <a href="/" class="btn btn-warning">Cancelar cambios</a>
       </div>
     </form>
     {{! delete account confirmation modal }}
@@ -101,30 +91,30 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">PLEASE CONFIRM</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Por favor confirmá</h5>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close btn-lg"
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
           </div>
           <div class="modal-body">
-            <p>Be careful</p>
-            <p>This operation will delete your account</p>
-            <p>ARE YOU SURE?</p>
+            <p>Cuidado!</p>
+            <p>Esta operación borrará tu cuenta</p>
+            <p>Estás seguro?</p>
           </div>
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              class="btn btn-success btn-lg"
               data-bs-dismiss="modal"
-            >Cancel</button>
+            >Cancelar</button>
             <a
-              href="/users/delete"
+              href="/delete"
               type="button"
-              class="btn btn-danger"
-            >Delete</a>
+              class="btn btn-danger btn-lg"
+            >Borrar</a>
           </div>
         </div>
       </div>

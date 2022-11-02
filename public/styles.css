@@ -5,157 +5,45 @@ body {
 * {
   box-sizing: border-box;
 }
-/* .grid-container {
-  text-align: center;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  grid-template-areas:
-    "nav nav nav nav"
-    "main main main main"
-    "section2-cuadro1 section2-cuadro2 section2-cuadro3 section2-cuadro4"
-    "section2 section2 section2 section2"
-    "article1 article2 article3 aside "
-    "gallery gallery gallery gallery"
-    "footer footer footer footer";
-  gap: 0.5 em 0.4em;
-} */
-.item1 {
-  /* grid-area: nav; */
-  background: rgb(56, 187, 56);
-  text-decoration: none;
-  font-size: 1.5rem;
+
+.hero {
+  background: rgb(197, 255, 81);
 }
-.item2 {
-  /* grid-area: main; */
-  background: white;
-  margin-bottom: 6em;
-  margin-top: 4em;
+.titulos-en-verde {
+  color: rgb(56, 187, 56);
+}
+.itemsTitulo {
+  background: #f9ffaa;
 }
 .items {
-  /* grid-area: aside; */
   background: rgb(253, 253, 154);
-
+  background: linear-gradient(#f9ffaa, rgba(31, 151, 105, 0.274));
   padding-top: 4em;
   padding-bottom: 2em;
 }
-.item4 {
-  /* grid-area: article1; */
-  background: yellow;
-  display: flex;
-  justify-content: center;
 
-  padding-top: 4em;
-  padding-bottom: 2em;
-}
-.item5 {
-  /* grid-area: article2; */
-  background: yellow;
-  display: flex;
-  justify-content: center;
-
-  padding-top: 4em;
-  padding-bottom: 2em;
-}
-.item6 {
-  /* grid-area: article3; */
-  background: yellow;
-  display: flex;
-  justify-content: center;
-
-  padding-top: 4em;
-  padding-bottom: 2em;
-}
-.item7 {
-  /* grid-area: gallery; */
-  background: linear-gradient(yellow, #3b3b3b);
-  padding-bottom: 3em;
-}
-.item8 {
-  grid-area: footer;
-  background: #3b3b3b;
-  color: white;
-}
-.links-navbar {
-  text-decoration: none;
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  gap: 7px;
-  color: white;
-}
 a:hover {
   color: red;
 }
-.columnas {
-  column-count: 2;
-  column-gap: 1.5rem;
-}
-.marca {
+
+/* .marca {
   justify-content: flex-start;
   color: white;
   grid-area: nav;
   text-decoration: none;
   list-style: none;
-}
+} */
 
-.columns-grid-footer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: "columna-1-footer columna-2-footer columna-3-footer";
-}
 .redes {
   display: flex;
   justify-content: space-around;
 }
-.columna-1-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.columna-3-footer {
-  padding-right: 8em;
-  padding-left: 8em;
-}
-.section2 {
-  grid-area: section2;
-  padding: 2em;
-}
-.section2-cuadro1 {
-  grid-area: section2-cuadro1;
-  border: 3px solid rgb(56, 187, 56);
-  margin-left: 2em;
-  margin-right: 2em;
-  margin-bottom: 2em;
-  border-radius: 30px;
-}
-.section2-cuadro2 {
-  grid-area: section2-cuadro2;
-  border: 3px solid rgb(56, 187, 56);
-  margin-left: 2em;
-  margin-right: 2em;
-  margin-bottom: 2em;
-  border-radius: 30px;
-}
-.section2-cuadro3 {
-  /* grid-area: section2-cuadro3; */
-  border: 3px solid rgb(56, 187, 56);
-  margin-left: 2em;
-  margin-right: 2em;
-  margin-bottom: 2em;
-  border-radius: 30px;
-}
+
 .cuadros {
-  /* grid-area: section2-cuadro4; */
   border: 3px solid rgb(56, 187, 56);
-  /* margin-left: 2em;
-  margin-right: 2em;
-  margin-bottom: 2em; */
   border-radius: 25px;
 }
-.titulos-en-verde {
-  color: rgb(56, 187, 56);
-}
+
 .bi-stopwatch {
   margin-right: 0.5em;
 }
@@ -172,64 +60,10 @@ a:hover {
   color: rgb(56, 187, 56);
 }
 .titulo-recomendados {
-  color: black;
+  color: rgb(56, 187, 56);
   font-size: 2rem;
 }
 
 .logo {
   width: 30%;
 }
-
-/* nosotros
-.main-nosotros1 {
-  grid-area: main-nosotros1;
-}
-.main-nosotros2 {
-  grid-area: main-nosotros2;
-}
-.main-nosotros3 {
-  grid-area: main-nosotros3;
-}
-.main-nosotros4 {
-  grid-area: main-nosotros4;
-}
-.titulo-item2 {
-  margin-top: 1em;
-  margin-bottom: 3em;
-} */
-/* media queries*/
-/* @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
-  .grid-container {
-    grid-template-columns: 1;
-    grid-template-areas:
-      "nav"
-      "main"
-      "section2-cuadro1"
-      "section2-cuadro2"
-      "section2-cuadro3"
-      "section2-cuadro4"
-      "section2"
-      "article1"
-      "article2"
-      "article3"
-      "aside"
-      "gallery"
-      "footer";
-  }
-
-  @media only screen and (min-width: 668px) and (max-width: 1200px) {
-    .grid-container {
-      grid-template-columns: 2;
-      grid-template-areas:
-        "nav"
-        "main"
-        "section2-cuadro1 section2-cuadro2"
-        "section2-cuadro3 section2-cuadro4"
-        "section2 section2"
-        "article1 article2"
-        "article3 aside"
-        "gallery"
-        "footer";
-    }
-  }
-} */
